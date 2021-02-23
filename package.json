@@ -1,0 +1,65 @@
+{
+  "name": "wc-vuejs",
+  "version": "0.0.0",
+  "description": "Custom element (aka : web component OR micro front)",
+  "author": "Arthur Hamon",
+  "config": {
+    "i18nPath": "./src/i18n/",
+    "i18nProjectName": "PROJECT",
+    "i18nSourceFile": "us.json",
+    "i18nMissingTranslationFile": "missing.json"
+  },
+  "scripts": {
+    "build": "vue-cli-service build --target wc --name wcVuejs",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e",
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales $npm_package_config_i18nPath'**/*.json'",
+    "i18n:extract": "vue-i18n-extract -v './src/**/*.?(js|vue)' -l $npm_package_config_i18nPath'**/*.json' -o $npm_package_config_i18nPath$npm_package_config_i18nMissingTranslationFile && node ./extractI18n.js",
+    "i18n:push": "phraseapp push --wait",
+    "i18n:pull": "phraseapp pull",
+    "serve": "vue-cli-service serve",
+    "start": "vue-cli-service serve"
+  },
+  "dependencies": {
+    "@sentry/browser": "^5.29.2",
+    "@sentry/integrations": "^5.29.2",
+    "@sentry/types": "^5.29.2",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-cookies": "^1.7.4",
+    "vue-i18n": "^8.22.2",
+    "vue-property-decorator": "^8.4.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.19",
+    "@types/webpack": "^4.41.25",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-e2e-cypress": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "@vue/test-utils": "^1.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "typescript": "~3.9.3",
+    "vue-cli-plugin-i18n": "^1.0.1",
+    "vue-i18n-extract": "^1.1.10",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "keywords": [
+    "custom element",
+    "web component",
+    "micro front"
+  ]
+}

@@ -1,0 +1,39 @@
+phraseapp:
+  access_token: TOKEN
+  project_id: PROJECT_ID
+  file_format: i18next
+
+  push:
+    sources:
+      - file: ./src/i18n/us.json
+        params:
+          locale_id: 'en-US'
+          update_translations: true
+          skip_upload_tags: true
+
+  pull:
+    targets:
+      - file: ./src/i18n/fr.json
+        params:
+          locale_id: 'fr-FR'
+          tags: myorders-web
+      - file: ./src/i18n/us.json
+        params:
+          locale_id: 'en-US'
+          tags: myorders-web
+      - file: ./src/i18n/en.json
+        params:
+          locale_id: 'en-GB'
+          tags: myorders-web
+      - file: ./src/i18n/es.json
+        params:
+          locale_id: 'es-ES'
+          tags: myorders-web
+      - file: ./src/i18n/it.json
+        params:
+          locale_id: 'it-IT'
+          tags: myorders-web
+      - file: ./src/i18n/de.json
+        params:
+          locale_id: 'de-DE'
+          tags: myorders-web
